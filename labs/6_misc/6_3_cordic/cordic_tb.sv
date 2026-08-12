@@ -1,35 +1,5 @@
-`timescale 1ns/1ps
-
-module cordic_tb;
-
-    logic clk;
-    logic rst;
-    logic start;
-    logic [15:0] angle;
-
-    logic calc;
-    logic finish;
-
-    logic signed [15:0] cos_out;
-    logic signed [15:0] sin_out;
-
-
-    // DUT
-    cordic dut (
-        .clk     (clk),
-        .rst     (rst),
-        .start   (start),
-        .angle   (angle),
-        .calc    (calc),
-        .finish  (finish),
-        .cos_out (cos_out),
-        .sin_out (sin_out)
-    );
-
-
     // 10 ns clock period
     always #5 clk = ~clk;
-
 
     initial begin
 
